@@ -26,9 +26,7 @@ void LoggerService::OnStart(DWORD argc, TCHAR* argv[]) {
   (void)argc;
   (void)argv;
 
-  WriteToEventLog(_T("Logging service started"));
-  
-  
+  WriteToEventLog(_T("Logging service started")); 
 }
 
 void LoggerService::OnStop() {
