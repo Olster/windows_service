@@ -1,12 +1,12 @@
 #ifndef SERVICE_INSTALLER_H_
 #define SERVICE_INSTALLER_H_
 
-#include "service.h"
+#include "service_base.h"
 
 class ServiceInstaller {
 public:
-  static bool Install(const Service& service);
-  static bool Uninstall(const Service& service);
+  static bool Install(const ServiceBase& service);
+  static bool Uninstall(const ServiceBase& service);
 private:
   ServiceInstaller() {}
 };

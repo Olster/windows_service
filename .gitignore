@@ -1,3 +1,7 @@
 *.vcxproj
 
 Debug
+*.user
+*.suo
+windows_service.sdf
+*.opensdf
