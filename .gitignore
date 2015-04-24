@@ -1,5 +1,3 @@
-*.vcxproj
-
 Debug
 *.user
 *.suo

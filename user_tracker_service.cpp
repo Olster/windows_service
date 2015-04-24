@@ -2,6 +2,8 @@
 
 #include <WtsApi32.h>
 
+#pragma comment(lib, "Wtsapi32.lib")
+
 void UserTrackerService::OnStart(DWORD /*argc*/, TCHAR** /*argv[]*/) {
   m_logFile.close();
 

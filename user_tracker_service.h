@@ -7,7 +7,11 @@
 
 class UserTrackerService : public ServiceBase {
  public:
-  DISABLE_COPY_MOVE(UserTrackerService);
+  UserTrackerService(const UserTrackerService& other) = delete;
+  UserTrackerService& operator=(const UserTrackerService& other) = delete;
+
+  UserTrackerService(UserTrackerService&& other) = delete;
+  UserTrackerService& operator=(UserTrackerService&& other) = delete;
 
   UserTrackerService()
    : ServiceBase(_T("UserTrackerService"),

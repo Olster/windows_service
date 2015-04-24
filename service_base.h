@@ -4,12 +4,14 @@
 #include <windows.h>
 #include <atlstr.h>
 
-#include "copy_disabler.h"
-
 // Base Service class used to create windows services.
 class ServiceBase {
  public:
-  DISABLE_COPY_MOVE(ServiceBase);
+  ServiceBase(const ServiceBase& other) = delete;
+  ServiceBase& operator=(const ServiceBase& other) = delete;
+
+  ServiceBase(ServiceBase&& other) = delete;
+  ServiceBase& operator=(ServiceBase&& other) = delete;
 
   virtual ~ServiceBase() {}
   
@@ -43,6 +45,7 @@ class ServiceBase {
   // Writes |msg| to Windows event log.
   void WriteToEventLog(const CString& msg, WORD type = EVENTLOG_INFORMATION_TYPE);
 
+  // Overro=ide these functions as you need.
   virtual void OnStart(DWORD argc, TCHAR* argv[]) = 0;
   virtual void OnStop() {}
   virtual void OnPause() {}
